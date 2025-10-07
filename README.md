@@ -49,16 +49,16 @@ pip install requests matplotlib basemap
 4. **Run the application:**
 
    ```bash
-   python satellitesimulation (Copy).py
+   python satellitesimulation.py
    ```
 
 ## Usage Examples & API Documentation
 
-The main script `satellitesimulation (Copy).py` contains the core logic for fetching satellite data and visualizing their locations.
+The main script `satellitesimulation.py` contains the core logic for fetching satellite data and visualizing their locations.
 
 **Example Usage:**
 
-1.  Open the `satellitesimulation (Copy).py` file.
+1.  Open the `satellitesimulation.py` file.
 2.  Locate the `satellites` dictionary:
 
 ```python
@@ -80,7 +80,7 @@ This dictionary maps satellite names to their NORAD IDs. You can add or modify e
 
 ## Configuration Options
 
-- **API Key:** The `API_KEY` variable in `satellitesimulation (Copy).py` must be set to a valid API key for fetching satellite data. (from here: http://n2yo.com/api/)
+- **API Key:** The `API_KEY` variable in `satellitesimulation.py` must be set to a valid API key for fetching satellite data. (from here: http://n2yo.com/api/)
 - **Satellites:** The `satellites` dictionary can be modified to include the NORAD IDs of the satellites you wish to track.
 - **Visualization Parameters:** You can adjust parameters like the map projection, animation speed, and marker styles in the code to customize the visualization.
 
