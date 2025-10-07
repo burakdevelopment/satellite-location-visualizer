@@ -44,7 +44,7 @@ pip install requests matplotlib basemap
 
 3. **Obtain an API Key:**
 
-   - This project requires an API key to fetch satellite data. You'll need to register for an API key from a satellite tracking service (e.g., N2YO, Space-Track).  Replace `"yourapikey:D"` in the `satellitesimulation (Copy).py` file with your actual API key.
+   - This project requires an API key to fetch satellite data. You'll need to register for an API key from a satellite tracking service (e.g., N2YO, Space-Track).  Replace `"yourapikey:D"` in the `satellitesimulation (Copy).py` file with your actual API key. (from here: http://n2yo.com/api/)
 
 4. **Run the application:**
 
@@ -80,7 +80,7 @@ This dictionary maps satellite names to their NORAD IDs. You can add or modify e
 
 ## Configuration Options
 
-- **API Key:** The `API_KEY` variable in `satellitesimulation (Copy).py` must be set to a valid API key for fetching satellite data.
+- **API Key:** The `API_KEY` variable in `satellitesimulation (Copy).py` must be set to a valid API key for fetching satellite data. (from here: http://n2yo.com/api/)
 - **Satellites:** The `satellites` dictionary can be modified to include the NORAD IDs of the satellites you wish to track.
 - **Visualization Parameters:** You can adjust parameters like the map projection, animation speed, and marker styles in the code to customize the visualization.
 
