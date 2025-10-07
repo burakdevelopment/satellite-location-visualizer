@@ -39,7 +39,7 @@ pip install requests matplotlib basemap
 2. **Install dependencies:**
 
    ```bash
-   pip install -r requirements.txt # (if a requirements.txt file exists, otherwise see dependencies section)
+   pip install -r requirements.txt 
    ```
 
 3. **Obtain an API Key:**
