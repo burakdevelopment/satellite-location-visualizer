@@ -1,14 +1,24 @@
 # Satellite Location Visualizer
 
-Satellite location visualizer is a Python-based application that visualizes the real-time location of various satellites orbiting Earth. It utilizes satellite tracking data and displays their positions on a world map using the `matplotlib` and `basemap` libraries.
+Satellite Orbit Visualizer is a Python-based application that calculates and visualizes the ground tracks of satellites in Earth orbit.
 
-## Key Features & Benefits
+Instead of relying on a third-party API for location data, this project uses the SGP4 orbital propagation model to calculate satellite positions in real time. It pulls the latest Two-Line Element (TLE) orbital data from CelesTrak and uses the skyfield library to estimate the satellite's current latitude/longitude position with scientific accuracy.
 
-- **Real-time Satellite Tracking:** Fetches and displays the current location of various satellites.
-- **Interactive Visualization:** Uses `matplotlib` and `basemap` to plot satellite positions on a world map.
-- **Satellite Selection:** Allows users to select from a predefined list of satellites to track.
-- **Animation:** Provides an animated visualization of satellite movement over time.
-- **User-Friendly Interface:** Features a simple Tkinter-based GUI for easy interaction.
+The calculated orbital path is plotted on a world map using matplotlib and basemap.
+
+## Key Features
+
+- Real-Time SGP4 Calculation: Calculates satellite positions instantly using the SGP4 model, rather than retrieving them from an API.
+
+- TLE Data Integration: Retrieves orbital parameters (TLE) directly from CelesTrak.
+
+- No API Key Required: No external API key is required for position data. Only an internet connection is required to download TLE data.
+
+- Multi-Satellite Tracking: Allows multiple satellites to be selected and tracked simultaneously with a simple tkinter-based interface.
+
+- Animated Ground Track: Visualizes satellite orbital paths with a real-time animation.
+
+- 2D World Map: Displays the current location and path of satellites on a world map using matplotlib and basemap.
 
 ## Prerequisites & Dependencies
 
@@ -18,13 +28,13 @@ Before running the satellite location visualizer, ensure you have the following 
 - `requests`
 - `matplotlib`
 - `basemap` (mpl_toolkits)
+- `skyfield` (for SGP4 orbit calculations)
 - `tkinter` (for GUI)
-- `ttk` (for enhanced Tkinter widgets)
 
 You can install these dependencies using pip:
 
 ```bash
-pip install requests matplotlib basemap
+pip install requests matplotlib basemap skyfield
 ```
 
 ## Installation & Setup Instructions
@@ -42,19 +52,14 @@ pip install requests matplotlib basemap
    pip install -r requirements.txt 
    ```
 
-3. **Obtain an API Key:**
-
-   - This project requires an API key to fetch satellite data. You'll need to register for an API key from a satellite tracking service (e.g., N2YO, Space-Track).  Replace `"yourapikey:D"` in the `satellitesimulation (Copy).py` file with your actual API key. (from here: http://n2yo.com/api/)
-
 4. **Run the application:**
 
    ```bash
    python satellitesimulation.py
    ```
 
-## Usage Examples & API Documentation
+## Usage Examples
 
-The main script `satellitesimulation.py` contains the core logic for fetching satellite data and visualizing their locations.
 
 **Example Usage:**
 
@@ -78,11 +83,6 @@ This dictionary maps satellite names to their NORAD IDs. You can add or modify e
 
 3.  Run the script to start the visualization. The Tkinter GUI will display a dropdown menu to select a satellite and a map showing its location.
 
-## Configuration Options
-
-- **API Key:** The `API_KEY` variable in `satellitesimulation.py` must be set to a valid API key for fetching satellite data. (from here: http://n2yo.com/api/)
-- **Satellites:** The `satellites` dictionary can be modified to include the NORAD IDs of the satellites you wish to track.
-- **Visualization Parameters:** You can adjust parameters like the map projection, animation speed, and marker styles in the code to customize the visualization.
 
 ## Contributing Guidelines
 
@@ -124,10 +124,3 @@ SOFTWARE.
 
 ```
 
-## Acknowledgments
-
-This project utilizes the following third-party resources:
-
-- `requests` library for making HTTP requests.
-- `matplotlib` and `basemap` libraries for data visualization.
-- Satellite tracking data from [specify the data source, e.g., N2YO].
